@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Лабораторная работа №1</title>
+</head>
+<body>
+<div class="header">
+  <h2> Выполнила: Хакимова Сафина Рамисовна</h2>
+  <h3>Группа: P3222</h3>
+  <h3>Вариант: 467906</h3>
+</div>
+
+<div class="main-content">
+
+  <div class="graph-section">
+    <h2>Область попадания</h2>
+    <div class="graph">
+      <svg height="350" width="350" xmlns="http://www.w3.org/2000/svg">
+
+        <line x1="30" x2="320" y1="175" y2="175" class="axis"></line>
+        <line x1="175" x2="175" y1="30" y2="320" class="axis"></line>
+        <polygon points="175,30 168,45 182,45" class="arrow"></polygon>
+        <polygon points="320,175 305,182 305,168" class="arrow"></polygon>
+
+
+        <line x1="225" x2="225" y1="180" y2="170" class="tick"></line>
+        <line x1="275" x2="275" y1="180" y2="170" class="tick"></line>
+        <line x1="75" x2="75" y1="180" y2="170" class="tick"></line>
+        <line x1="125" x2="125" y1="180" y2="170" class="tick"></line>
+
+        <line x1="170" x2="180" y1="125" y2="125" class="tick"></line>
+        <line x1="170" x2="180" y1="75" y2="75" class="tick"></line>
+        <line x1="170" x2="180" y1="225" y2="225" class="tick"></line>
+        <line x1="170" x2="180" y1="275" y2="275" class="tick"></line>
+
+
+        <text x="220" y="165" class="label">R/2</text>
+        <text x="270" y="165" class="label">R</text>
+        <text x="70" y="165" class="label">-R</text>
+        <text x="120" y="165" class="label">-R/2</text>
+        <text x="185" y="130" class="label">R/2</text>
+        <text x="185" y="80" class="label">R</text>
+        <text x="185" y="230" class="label">-R/2</text>
+        <text x="185" y="280" class="label">-R</text>
+        <text x="185" y="40" class="label">Y</text>
+        <text x="310" y="165" class="label">X</text>
+
+
+        <polygon points="175,175 125,175 125,75 175,75" class="area"></polygon>
+        <path d="M 175 175 L 75 175 A 100 100 0 0 0 175 275 Z" class="area"></path>
+        <polygon points="175,175 225,175 175,225" class="area"></polygon>
+      </svg>
+    </div>
+  </div>
+
+
+  <div class="form-section">
+    <h2>Параметры точки</h2>
+    <form id="valForm" method="post" class="input-form">
+      <div class="form-group">
+        <label for="x">Координата X (-5 до 5):</label>
+        <input type="text" id="x" name="x" placeholder="Введите X">
+      </div>
+
+      <div class="form-group">
+        <label>Координата Y:</label>
+        <div class="y-checkboxes">
+          <label><input type="checkbox" name="y" value="-3"> -3</label>
+          <label><input type="checkbox" name="y" value="-2"> -2</label>
+          <label><input type="checkbox" name="y" value="-1"> -1</label>
+          <label><input type="checkbox" name="y" value="0"> 0</label>
+          <label><input type="checkbox" name="y" value="1"> 1</label>
+          <label><input type="checkbox" name="y" value="2"> 2</label>
+          <label><input type="checkbox" name="y" value="3"> 3</label>
+          <label><input type="checkbox" name="y" value="4"> 4</label>
+          <label><input type="checkbox" name="y" value="5"> 5</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="r">Радиус R (1 до 4):</label>
+        <input type="text" id="r" name="r" placeholder="Введите R">
+      </div>
+
+      <div class="buttons">
+        <input type="submit" value="Проверить">
+        <input type="reset" value="Сбросить">
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div class="results-section">
+  <h2>Результаты проверок</h2>
+  <table class="results-table">
+    <thead>
+    <tr>
+      <th>X</th>
+      <th>Y</th>
+      <th>R</th>
+      <th>Результат</th>
+      <th>Время</th>
+      <th>Время работы</th>
+    </tr>
+    </thead>
+    <tbody id="resultsBody">
+    <tr>
+      <td colspan="6">Нет данных</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<script src="validation.js"></script>
+</body>
+</html>
